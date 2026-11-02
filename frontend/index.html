@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио разработчика</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <link href="/src/index.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: 250 249 246;
+      --fg: 22 28 36;
+      --muted: 98 108 120;
+      --card: 242 240 235;
+      --border: 221 218 210;
+      --accent: 13 116 120;
+    }
+    .dark {
+      --bg: 12 16 22;
+      --fg: 232 236 241;
+      --muted: 142 152 165;
+      --card: 20 26 34;
+      --border: 42 51 62;
+      --accent: 94 205 195;
+    }
+  </style>
+</head>
+<body class="bg-card text-muted min-h-screen">
+  <!-- Inline script to handle theme -->
+  <script type="text/javascript" src="/src/theme-init.js"></script>
+  <div id="root" class="mx-auto max-w-4xl p-4 min-h-screen"></div>
+</body>
+</html>

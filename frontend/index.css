@@ -1,0 +1,31 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables - need to define them in root */
+:root {
+  --bg: 250 249 246;
+  --fg: 22 28 36;
+  --muted: 98 108 120;
+  --card: 242 240 235;
+  --border: 221 218 210;
+  --accent: 13 116 120;
+}
+
+.dark {
+  --bg: 12 16 22;
+  --fg: 232 236 241;
+  --muted: 142 152 165;
+  --card: 20 26 34;
+  --border: 42 51 62;
+  --accent: 94 205 195;
+}
+
+/* Color scheme variables - used in Recharts and other elements */
+:root {
+  --accent-light: 13 116 120;
+  --accent-dark: 94 205 195;
+  --border-dark: 42 51 62;
+  --border-light: 221 218 210;
+}

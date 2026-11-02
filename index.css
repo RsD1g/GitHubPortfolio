@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens */
+:root {
+  --bg: 250 249 246;  /* light bg */
+  --fg: 22 28 36;      /* light fg */
+  --muted: 98 108 120; /* light muted */
+  --card: 242 240 235; /* light card */
+  --border: 221 218 210; /* light border */
+  --accent: 13 116 120; /* light accent */
+}
+
+.dark {
+  --bg: 12 16 22;       /* dark bg */
+  --fg: 232 236 241;   /* dark fg */
+  --muted: 142 152 165; /* dark muted */
+  --card: 20 26 34;     /* dark card */
+  --border: 42 51 62;   /* dark border */
+  --accent: 94 205 195; /* dark accent */
+}
+
+/* Custom base styles */
+html {
+  color-scheme: light dark;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Custom base styles */
+h1, h2, h3, h4, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+p, ul, ol {
+  color: var(--fg);
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Layout */
+.container {
+  max-width: 4xl;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}

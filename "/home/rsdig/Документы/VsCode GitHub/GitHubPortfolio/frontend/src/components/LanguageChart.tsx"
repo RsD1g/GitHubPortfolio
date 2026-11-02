@@ -1,0 +1,67 @@
+import React from 'react';
+import { BarChart } from 'recharts';
+import { useTheme } from '../context/ThemeContext';
+
+interface Language {
+  language: string;
+  count: number;
+}
+
+const LanguageChart: React.FC<{ languages: Language[] }> = ({ languages }) => {
+  const { theme } = useTheme();
+
+  const barColors = languages.map((_, index) => {
+    const colors = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#10b981', '#84cc16'];
+    return colors[index % colors.length];
+  });
+
+  return (
+    <div className="mb-6">
+      <h3 className="text-lg font-semibold text-primary mb-2">Языки (по убыванию)</h3>
+      <BarChart
+        className="w-full max-w-2xl"
+        margin={{ top: 8, right: 32, left: 32, bottom: 5 }}
+        data={languages}
+        marginTop={10}
+      >
+        <CartesianGrid strokeDasharray="3 3" stroke="#111827" />
+        <XAxis />
+        <YAxis />
+        <Tooltip />
+        {languages.map((language, index) => (
+          <Bar
+            key={language.language}
+            dataKey={language.language}
+            fill={colorMap[index % colorMap.length]}
+            stroke={theme === 'dark' ? '#374151' : '#e5e7eb'}
+            className="hover:opacity-75 focus:outline-none"
+            cx={15 + index * 30}
+            cy={50}
+            width={40}
+            height={30}
+            rx={8}
+            ry={4}
+            textAnchor="middle"
+            textAngle="-45"
+            textDistance={5}
+            textElement={<text className="text-gray-50 text-xs font-bold" dy="-15" />}
+          />
+        ))}
+      </BarChart>
+      <div className="sr-only">
+        <table>
+          {languages.map((language) => (
+            <tr key={language.language}>
+              <td>{language.language}</td>
+              <td>{language.count}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+  );
+};
+
+const colorMap = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#10b981', '#84cc16'];
+
+export default LanguageChart;
